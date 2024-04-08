@@ -104,6 +104,10 @@ impl<'a> EndpointDescriptor<'a> {
     pub fn synch_address(&self) -> u8 {
         self.descriptor.bSynchAddress
     }
+
+    pub fn as_raw(&self) -> &libusb_endpoint_descriptor {
+        self.descriptor
+    }
 }
 
 impl<'a> fmt::Debug for EndpointDescriptor<'a> {
